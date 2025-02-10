@@ -1,22 +1,13 @@
-site_name: GIS 1 (155GIS1)
+site_name: Kartografie 1 (155KAR1)
 nav:
   - Charakteristika předmětu: index.md
-  - Cvičení:
-      - Úvod do práce v prostředí ArcGIS, prostorová data, datové zdroje, atributová tabulka: cviceni/cviceni1.md
-      - Vektorová data, atributové dotazy, prostorové dotazy: cviceni/cviceni2.md
-      - Prostorové funkce (geoprocessing), spatial join: cviceni/cviceni3.md
-      - Práce s externími daty (Excel, CSV), join: cviceni/cviceni4.md
-      - Rastrová data, georeferencování: cviceni/cviceni5.md
-      - Vektorizace, tvorba geodatabáze, kontrola topologie: cviceni/cviceni6.md
-      - ArcGIS Online, webové služby, připojení do ArcGIS Pro: cviceni/cviceni7.md
-      - Ukázky webové prezentace map, Experience Builder, Instant Apps, Dashboards: cviceni/cviceni8.md
-      - Volně dostupné GIS nástroje (QGIS): cviceni/cviceni9.md
-      - QGIS – online publikace dat: cviceni/cviceni10.md
-  - Data: data.md
-  # - Hodnocení: hodnoceni.md
-  - Semestrální práce: semestralka.md
-  # - Výuková videa: videa.md
-  - Kvíz: quiz.md
+  - Úlohy:
+      - Úloha 1 - Loxodroma a ortodroma: ulohy/uloha1.md
+      - Úloha 2 - Výpočet zkreslení: ulohy/uloha2.md
+      - Úloha 3 - Srovnání zobrazení: ulohy/uloha3.md
+      - Úloha 4 - Výpočet souřadnic bodů v kartografických zobrazeních: ulohy/uloha4.md
+
+
 plugins:
   - search
   - glightbox:
@@ -102,4 +93,9 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.caret
   - pymdownx.tilde
+
+  
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 

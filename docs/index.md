@@ -1,11 +1,7 @@
 
-# GIS 1 {: .page_title}
+# Kartografie 1 {: .page_title}
 
-Předmět vás seznámí se základy tzv. __geografických informačních systémů__ (GIS). GIS je soubor nástrojů sloužících ke __sběru__, __správě__, __analýze__ a __vizualizaci__ geografických dat. Umožňuje efektivně pracovat s prostorovými informacemi, což zahrnuje __mapy__, __satelitní snímky__, __adresy__, __topografické údaje__ a mnoho dalšího. Dokáže provádět složité analýzy, identifikovat vzory, a tím __lépe porozumět geografickým jevům a vztahům__.
-
-GIS má široké uplatnění, od __městského plánování__, přes __správu přírodních zdrojů__ až po __krizový management__. Je nepostradatelným nástrojem pro efektivní rozhodování a řízení v různých odvětvích a pomáhá lépe pochopit složité geografické souvislosti.
-
-GIS 1 je v tomto tématu úvodním kurzem. Zatímco přednášky vás provedou základní teorií, cvičení se věnují praktickému ovládání GIS software – zejména porozumění práce s daty a provádění jednodušších analýz. Během výuky je používán software __:simple-arcgis: Esri ArcGIS Pro__{: style="white-space: nowrap;"}, ke konci kurzu bude pak věnován prostor i možným alternativám (program __:simple-qgis: QGIS__).
+Význam __matematické kartografie__. Referenční plochy a souřadnicové soustavy. Kartografická zkreslení. __Klasifikace kartografických zobrazení__. Zobrazení elipsoidu na kouli. Jednoduchá zobrazení kuželová, válcová a azimutální. Nepravá, polykónická, polyedrická a obecná zobrazení. Přehled zobrazení užitých na území ČR a ve světě. Volba, identifikace a hodnocení zobrazení. Referenční __souřadnicové systémy__ v GIS. 
 
 <h2 style="text-align:center;">Naučíte se</h2>
 <!-- styl je zde pridany HTML tagem (ne pomoci '##'), aby se text neobjevil v tabulce obsahu vlevo na strance -->
@@ -14,89 +10,99 @@ GIS 1 je v tomto tématu úvodním kurzem. Zatímco přednášky vás provedou z
 
 -   :material-map-outline:{ .xl }
 
-    __zpracovávat__ a __analyzovat__ prostorová (tj. geografická, mapová) data
+    pochopit význam __matematické kartografie__
 
 -   :material-vector-polygon:{ .xl }
 
-    porozumět rozdílu mezi __vektorovými__ a __rastrovými__ daty
+    definovat  __referenční systémy__ v GIS
 
--   :material-filter-outline:{ .xl }
+-   :octicons-globe-16:{ .xl }
 
-    __filtrovat__ data pomocí atributových a prostorových dotazů
+    rozeznávat __kartografická zobrazení__ a pracovat s nimi
 
 -   :material-tools:{ .xl }
 
-    aplikovat základní __prostorové funkce__ (nástroje geoprocessingu)
-
--   :material-creation-outline:{ .xl }
-
-    __tvořit__ a __editovat__ GIS data
-
--   :material-vector-difference:{ .xl }
-
-    základy datové __topologie__
-
--   :octicons-share-16:{ .xl }
-
-    __sdílet__ data prostřednictvím webu (systém _ArcGIS Online_, webové mapové aplikace)
-
--   :simple-qgis:{ .xl }
-
-    získat základy ovládání __alternativního GIS software__ (_QGIS_)
-
+    vypočítat kartografické __zkreslení__
 
 </div>
 
 <div class="gallery_container" markdown>
-![](./assets/index/01.jpg){: .no-filter }
-![](./assets/index/02.jpg){: .no-filter }
-![](./assets/index/03.jpg){: .no-filter }
-![](./assets/index/04.jpg){: .no-filter }
-![](./assets/index/05.jpg){: .no-filter }
-![](./assets/index/06.jpg){: .no-filter }
-![](./assets/index/07.jpg){: .no-filter }
-![](./assets/index/08.jpg){: .no-filter }
-![](./assets/index/09.jpg){: .no-filter }
-![](./assets/index/10.jpg){: .no-filter }
-![](./assets/index/11.jpg){: .no-filter }
-![](./assets/index/12.jpg){: .no-filter }
+![](./assets/index/01.png){: .no-filter }
+![](./assets/index/02.png){: .no-filter }
+![](./assets/index/03.png){: .no-filter }
+![](./assets/index/04.png){: .no-filter }
+![](./assets/index/05.png){: .no-filter }
+![](./assets/index/06.png){: .no-filter }
+![](./assets/index/07.png){: .no-filter }
 </div>
 
-<!-- ## Doporučená literatura
+## Doporučená literatura
 
-1. Kolář, J.: Geografické informační systémy 10. Vydavatelství ČVUT, Praha 1998.
-2. Rapant, P. (2006): Geoinformatika a geoinformační technologie. VŠB-TU Ostrava, 500 str. ISBN 80-248-1264-9.
-3. Břehovský, M., Jedlička, K. (2005): Přednáškové texty pro Úvod do GIS. ZČU Plzeň, 116 s.
-4. Hrubý M.: Geografické Informační Systémy (GIS) - Studijní opora. VÚT v Brně, 91 str.
-5. Tuček J.: Geografické informační systémy, Praha Computer Press, 1998. -->
+- Buchar P.: Matematická kartografie (skriptum)
+- Fiala F.: Matematická kartografie (učebnice)
+- Hojovec a kol.: Kartografie (učebnice)
 
 ## Přednášky {: style="margin-bottom:0;"}
 
 účast doporučená
 {: style="opacity:50%;margin-top:0;"}
 
-![](https://geomatics.fsv.cvut.cz/wp-content/uploads/2022/01/03-edit_export@0.5x-2.jpg){: .off-glb .no-filter style="height: 1.5em; vertical-align: -.4em; clip-path: circle();"} 
-__prof. Ing. Lena Halounová, CSc.__
+__[prof. Ing. Jiří Cajthaml, Ph.D.](https://geomatics.fsv.cvut.cz/employees/jiri-cajthaml/)__
 
-1. Definice GIS, informatika, základní pojmy, aplikační oblasti GIS, prostor, topologie, historie GIS
-2. Reálný svět × GIS, model v GIS, vztahy objektů, typy modelů, geometrické typy objektů, rozlišovací schopnost
-3. Geografická poloha v GIS, prostorové vztahy, atributy
-4. Čas v GIS, modelování, druhy modelů, chyby v modelování v GIS
-5. Vektorový a rastrový GIS, datová struktura
-6. Rastrový GIS, atributová data
-7. Vektorový GIS, druhy objektů
-8. Geometrické a topologické vlastnosti objektů ve vektorovém GIS
-9. Vektorová a rastrová reprezentace prostorových objektů
-10. Rastrová reprezentace prostorových objektů, způsob ukládání rastrových objektů
+1. [Význam matematické kartografie. Referenční plochy. Souřadnicové soustavy. Důležité křivky.](http://maps.fsv.cvut.cz/~cajthaml/vyuka/kar1/prednasky/KAR1_pr1.pdf)
+2. [Kartografická zobrazení. Délkové zkreslení. Podmínky konformity. Zkreslení azimutu a úhlu. Hlavní paprsky. Plošné zkreslení. Zkreslení při známých hlavních paprscích.](http://maps.fsv.cvut.cz/~cajthaml/vyuka/kar1/prednasky/KAR1_pr2.pdf)
+3. [Klasifikace zobrazení. Jednoduchá zobrazení. Zobrazení elipsoidu na kouli.](http://maps.fsv.cvut.cz/~cajthaml/vyuka/kar1/prednasky/KAR1_pr3.pdf)
+4. [Kuželová zobrazení ekvidistantní, ekvivalentní, konformní.](http://maps.fsv.cvut.cz/~cajthaml/vyuka/kar1/prednasky/KAR1_pr4.pdf)
+5. [Válcová zobrazení ekvidistantní, ekvivalentní, konformní. Válcové projekce. Azimutální zobrazení. Azimutální projekce.](http://maps.fsv.cvut.cz/~cajthaml/vyuka/kar1/prednasky/KAR1_pr5.pdf)
+6. [Zobrazení použitá na území ČR. Cassiniho zobrazení. Křovákovo zobrazení.](http://maps.fsv.cvut.cz/~cajthaml/vyuka/kar1/prednasky/KAR1_pr6.pdf)
+7. [Zobrazení použitá na území ČR. Gaussovo zobrazení elipsoidu v poledníkových pásech. Zobrazení UTM.](http://maps.fsv.cvut.cz/~cajthaml/vyuka/kar1/prednasky/KAR1_pr7.pdf)
+8. [Nepravá zobrazení kuželová, azimutální a válcová. Jejich modifikace.](http://maps.fsv.cvut.cz/~cajthaml/vyuka/kar1/prednasky/KAR1_pr8.pdf)
+9. [Polykónická zobrazení. Neklasifikovaná zobrazení. Polyedrické aplikace.](http://maps.fsv.cvut.cz/~cajthaml/vyuka/kar1/prednasky/KAR1_pr9.pdf)
+10. [Volba, užití a identifikace zobrazení. Hodnocení zobrazení. Kritéria pro optimalizaci zobrazení. ](http://maps.fsv.cvut.cz/~cajthaml/vyuka/kar1/prednasky/KAR1_pr10.pdf)
+11. [Referenční souřadnicové systémy v GIS. Systém JTSK/05. Přehled v praxi užívaných zobrazení. Transformace rovinných souřadnic.](http://maps.fsv.cvut.cz/~cajthaml/vyuka/kar1/prednasky/KAR1_pr11.pdf)
 
-## Harmonogram {: style="margin-bottom:0;"}
 
-[![](./assets/index/schedule.svg#only-light){.off-glb .no-filter}](https://kos.cvut.cz/schedule/course/1551GIS/semester/B232){target="_blank"}
-[![](./assets/index/schedule_dark.svg#only-dark){.off-glb .no-filter}](https://kos.cvut.cz/schedule/course/1551GIS/semester/B232){target="_blank"}
+## Cvičení {: style="margin-bottom:0;"}
+
+__[prof. Ing. Jiří Cajthaml, Ph.D.](https://geomatics.fsv.cvut.cz/employees/jiri-cajthaml/)__
+
+| Datum  | Náplň cvičení |
+|--------|--------------|
+| 20.2.  | odpadá       |
+| 27.2.  | odpadá       |
+| 6.3.   | zadání [__1. úlohy__](./ulohy/uloha1.md) |
+| 13.3.  | konzultace   |
+| 20.3.  | zadání [__2. úlohy__](./ulohy/uloha2.md) |
+| 27.3.  | konzultace   |
+| 3.4.   | zadání [__3. úlohy__](./ulohy/uloha3.md) |
+| 10.4.  | test z úloh 1+2 |
+| 17.4.  | Velikonoce   |
+| 24.4.  | zadání [__4. úlohy__](./ulohy/uloha4.md) |
+| 29.4.  | úterý (čtvrteční rozvrh) - konzultace |
+| 1.5.   | svátek       |
+| 8.5.   | svátek       |
+| 15.5.  | výuka v terénu |
+| 19.5.  | pondělí (čtvrteční rozvrh) výuka v terénu |
+| x.5.   | test z úloh 3+4 |
+
+
+__Každá úloha bude obsahovat:__
+
+- zadání
+- matematickou formulaci
+- výpočty včetně potřebných mezivýpočtů
+- zdrojové kódy skriptů
+- obrazové přílohy
+- přehledný souhrn výsledků v tabulkách
+- zhodnocení výsledků a závěr
+
+Úlohy nesprávně numericky vyřešené či nedbale vyhotovené nebudou přijaty. Úlohy 1+2, 3+4 se po ukončení testují. Pro udělení zápočtu je nezbytně nutné odevzdání všech úloh a úspěšné vykonání požadovaných testů.
+
+Literatura je uvedená v harmonogramu přednášek. 
 
 ---
 
-[Stránka předmětu v :custom-kos-logo-img-BW:{.middle style="margin-left:3px;"} :custom-kos-logo-BW:{.xl .middle}](https://kos.cvut.cz/course-syllabus/1551GIS/B232){ .md-button .md-button--primary target="_blank"}
+[Stránka předmětu v :custom-kos-logo-img-BW:{.middle style="margin-left:3px;"} :custom-kos-logo-BW:{.xl .middle}](https://kos.cvut.cz/course-syllabus/155KAR1){ .md-button .md-button--primary target="_blank"}
 {align=center}
 
 <br>
