@@ -3,96 +3,52 @@ icon: material/numeric-3-box
 title: Úloha 3
 ---
 
-Pro zadané státní území vzájemně porovnejte z hlediska hodnot délkového zkreslení:
+# Srovnání kartografických zobrazení
 
-- válcové konformní zobrazení o dvou nezkreslených rovnoběžkách (Mercatorovo)
-- stereografickou azimutální projekci s nezkreslenou rovnoběžkou
+Pro zadanou zemi vytvořte mapový výstup, který bude stát zobrazovat v několika kartografických zobrazeních a bude porovnávat plošné zkreslení těchto zobrazení. Kromě přednastavených kartografických zobrazení navrhněte také tři, která budou idealizovaná přímo pro vaše území.
 
-Navrhujte obecnou polohu zvolených zobrazení. Nezkreslené rovnoběžky volte tak, aby vliv délkového zkreslení ve středu území a na okraji byl v absolutní hodnotě stejný.
+## Postup v ArcGIS Pro:
 
-Vyhotovte obrázky se zákresem státních hranic a zeměpisné sítě.
+- Vytvoříme nový projekt a nahrajeme [databázi zemí](https://github.com/jankoudy/KAR1/blob/main/uloha3/world_boundaries.zip) (_add data_)
+- Z databáze zemí ponecháme pouze své zadání (_Definition Query_), citlivě odstraníme odlehlé ostrovy, změníme symbologii.
+- Vypneme podkladové mapy.
+- Budeme vytvářet celkem devět map, základní mapu v Mercatorově zobrazení si tak můžeme devětkrát nakopírovat. Pojmenovávat budeme mapy dle názvu zobrazení.
+- Použijeme tato kartografická zobrazení:
+    1. Mercatorovo zobrazení.
+    2. 5 kartografických zobrazení dle vlastního výběru (Bonne, Winkel–Tripel, Cube, Mollweide, Spilhaus World Ocean, Robinson, Fuller, Plate Carée) – nastavujeme v _Map_ -> _Properties_ -> _Coordinate systems_ -> _Projected_ -> _World_.
+    3. 3 kartografická zobrazení vhodná pro naše území (bude probráno později).
+- Pro každé zobrazení nás zajímá, jak moc je v něm naše země plošně změněna. Cílem je tedy vypočítat plochu daného státu v daném kartografickém zobrazení. (nepůjde pro Mercatorovo zobrazení)
+    1. Vrstvu obsahující náš polygon musíme nejprve předefinovat na správné zobrazení (_Analyses_ -> _Tools_ -> _Project_ -> nastavíme aktuální souřadnicový systém – _Current Map_).
+    2. Nad nově vzniklou vrstvou (ve správných rovinných souřadnicích) vypočteme její obsah (můžeme využít sloupec rozloha -> _Calculate Geometry_).
+- Pokud máme hotových všech devět dílčích map, můžeme vytvořit Layout (_Insert_ -> _New Layout_ -> _A3 Portraite_).
+- Layout bude obsahovat všechny náležitosti mapy kromě legendy – název, mapová okna, měřítko, tiráž – vytvoříme společně během cvičení.
 
-Rozhodněte, kolik bude zapotřebí souřadnicových soustav za podmínky, že vliv délkového zkreslení nepřekročí 20 cm/km.
+## Nalezení optimálních zobrazení:
 
-V uvedených řešeních uvažujte referenční kouli. Výpočet zkreslení proveďte s přesností 6 desetinných míst, úhlové výpočty na minuty (na km v délce po povrchu Země).
+Válcové zobrazení – cílem je získat ekvivalentní válcové kartografické zobrazení. Cest je několik, my využijeme myšlenku, že by bylo vhodné, aby nejsevernější bod území byl stejně délkově zkreslen jako ten nejjižnější. Respektive, aby tyto dva body dosahovaly délkového zkreslení stejně odlehlého od 1. U válcových zobrazení v normální poloze závisí délkové zkreslení v rovnoběžce pouze na zeměpisné šířce.
 
-[Shapefile se zeměpisnou sítí po 1°](http://maps.fsv.cvut.cz/~cajthaml/vyuka/kar1/latlong01.zip)
+- Základní vzorce pro válcové zobrazení [ZDE](https://github.com/jankoudy/KAR1/blob/main/uloha3/vzorce.png).
+- Sečtením ms a mj a následným dosazením a úpravou získáme vztah pro výpočet hodnoty nezkreslené rovnoběžky.
+- Před výpočtem musím nalézt krajní body našeho území (nejjednodušší asi pomocí Calculate Geometry nad nějakým nepoužívaným sloupcem – minimum/maximum y-coordinate).
+- V ArcGIS Pro existuje pro ekvivalentní válcové zobrazení název Cylindrical Equal Area, do parametrů vložím právě zjištěnou nezkreslenou rovnoběžku.
 
-[Geodatabáze hranic států](http://maps.fsv.cvut.cz/~cajthaml/vyuka/kar1/svet.gdb.zip)
+Azimutální zobrazení – i zde se pracuje s délkovým zkreslením na okraji našeho zájmového území. Azimutální zobrazení v obecné poloze nabízí stejné hodnoty zkreslení při stejné vzdálenosti od centra promítání. Cíl je tedy sevřít území v požadovaném zobrazení do opsané kružnice a zjistit souřadnice jejího středu. Naším požadovaným zobrazením bude Lambertovo ekvivalentní azimutální zobrazení.
 
-__Doporučený postup v ArcGIS Pro pro Mercatorovo zobrazení:__
+- Postup hledání středu promítání je v této úloze iterační. Nejprve vytvoříme kružnici opsanou našemu území v Mercatorově zobrazení (_Tools_ -> _Minimum Bounding Geometry_ -> _Circle_) a zjistíme souřadnice jejího středu (_Calculate Geometry_ -> _Centriod x/y-coordinate_).
+- Poté již nastavíme kartografické zobrazení na naše požadované (Lambert Azimuthal Equal Area), jako projekční centrum vyplníme zjištěné hodnoty v bodě výše.
+- Proces provedeme znovu – vytvoříme kružnici opsanou, zjistíme její střed a pomocí těchto hodnot nastavíme znovu Lambertovo azimutální zobrazení. Toto zobrazení s těmito zjištěnými hodnotami již můžeme považovat za vhodné pro naše území.
 
-1. otevřít GDB s hranicemi států, vybrat stát a exportovat do samostatného souboru
-2. nastavit souřadnicový systém mapy v ArcGIS Pro na Mercator (world)
-    1. Map - Properties - Coordinate Systems - Predefined - Projected - World - Mercator (world)
-3. vytvořit minimální ohraničující obdélník s nejmenší šířkou
-    1. Geoprocessing - Minimum Bounding Geometry
-    2. nastavit vstup, výstup, RECTANGLE BY WIDTH
-    3. nastavit okno aplikace, aby tam byl celý stát a v Environments nastavit u Output Coordinate System "Current Map", u Processing Extent "Current Display Extent"
-    4. spustit funkci
-4. získat souřadnice bodů uprostřed kratších stran (krajní body ortodromy, která prochází středem státu)
-    1. vvytvořit novou bodovou vrstvu, nastavit Snapping na Midpoint, vytvořit 2 body
-    2. v atributové tabulce přidat sloupce fi, lambda a vypočítat souřadnice ve WGS84 pomocí Calculate geometry nad sloupcem
-5. nastavit souřadnicový systém mapy v ArcGIS Pro na Hotine (šikmé Mercatorovo zobrazení)
-    1. Map - Coordinate Systems - New Projected Coordinate System - Hotine Oblique Mercator Two Point Center
-    2. FE, FN nastavit na 0, doplnit zeměpisné souřadnice 2 dříve zjištěných bodů, Scale Factor nastavit 1, Latitude of Center 0
-6. vytvořit minimální ohraničující obdélník s nejmenší šířkou (znovu, tentokrát již ve správnějším souřadnicovém systému)
-    1. Geoprocessing - Minimum Bounding Geometry
-    2. nastavit vstup, výstup, RECTANGLE BY WIDTH
-    3. nastavit okno aplikace, aby tam byl celý stát a v Environments nastavit u Output Coordinate System "Current Map", u Processing Extent "Current Display Extent"
-    4. spustit funkci
-7. získat souřadnice bodů uprostřed kratších stran (krajní body ortodromy, která prochází středem státu) a v rohu
-    1. vytvořit novou bodovou vrstvu, nastavit Snapping na Midpoint a Vertex, vytvořit 2 body uprostřed kratších stran a 2 v rozích
-    2. v atributové tabulce přidat sloupce fi, lambda a vypočítat souřadnice ve WGS84 pomocí Calculate geometry nad sloupcem
-8. odečíst souřadnice bodu na jedné z krajních rovnoběžek (roh obdélníku)
-9. pomocí sférické trigonometrie vypočítat Š tohoto bodu
-11. vypočítat délkové zkreslení na krajní rovnoběžce (závisí pouze na Š)
-12. vypočítat kolik je potřeba souřadnicových soustav, aby zkreslení nepřesáhlo požadovanou hodnotu
-13. vytvořit mapu
-    1. přidat vrstvu s podkladem, např. World Topographic Base Map
-    2. přidat vrstvu se zeměpisnou sítí s vhodným intervalem
-    3. mapa bude obsahovat daný stát, obdélník a 3 body
-    4. vložit Layout: Insert - New Layout - A4 (na šířku nebo délku)
-    5. vložit Map Frame, nadpis, měřítko, tiráž
+Kuželové zobrazení – u kuželových zobrazení je výpočet ideálních hodnot nezkreslených rovnoběžek náročný, vychází ovšem z podobných požadavků, jako jsme probrali u válcových zobrazení. V případě zájmu se více můžete dočíst [ZDE](https://rozvoj.fsv.cvut.cz/zobrazeni/PLNY_TEXT.pdf). Pro naši úlohu využijeme nástroj pro volbu vhodného zobrazení přímo v softwaru ArcGIS Pro.
 
-__Doporučený postup v ArcGIS Pro pro Stereografickou projekci:__
+- Kromě nejsevernějšího a nejjižnějšího bodu území (jejich šířka) si zjistíme ještě nejzápadnější a nejvýchodnější souřadnice (jejich délka).
+- _Map_ -> _Properties_ -> _Coordinate Systems_ -> _New suggested projected coordinate system_ -> zadáme okrajové souřadnice a upřesníme požadavek na plochojevné zobrazení.
+- Pokud by ArcGIS Pro nenabídl žádné kuželové (Conic) zobrazení, vyzkoušíme ještě online nástroj [Projection Wizard](https://projectionwizard.org/), který funguje podobně. Pokud by nám tento nástroj nabídl nějaké kuželové zobrazení, nastavíme ho v ArcGIS dle zobrazených parametrů.
 
-1. otevřít GDB s hranicemi států, vybrat stát a exportovat do samostatného souboru
-2. nastavit souřadnicový systém mapy v ArcGIS Pro na Mercator (world)
-    1. Map - Properties - Coordinate Systems - Predefined - Projected - World - Mercator (world)
-3. vytvořit minimální ohraničující kružnici
-    1. Geoprocessing - Minimum Bounding Geometry
-    2. nastavit vstup, výstup, CIRCLE
-    3. nastavit okno aplikace, aby tam byl celý stát a v Environments nastavit u Output Coordinate System "Current Map", u Processing Extent "Current Display Extent"
-    4. spustit funkci
-4. získat souřadnice středu kružnice
-    1. Geoprocessing - Feature To Point
-    2. v atributové tabulce přidat sloupce fi, lambda a vypočítat souřadnice ve WGS84 pomocí Calculate geometry nad sloupcem
-5. nastavit souřadnicový systém mapy v ArcGIS Pro na Stereographic (stereografická projekce)
-    1. Map - Coordinate Systems - New Projected Coordinate System - Stereographic
-    2. FE, FN nastavit na 0, doplnit zeměpisné souřadnice středu, Scale Factor nastavit 1
-6. vytvořit minimální ohraničující kružnici (znovu, tentokrát již ve správnějším souřadnicovém systému)
-    1. Geoprocessing - Minimum Bounding Geometry
-    2. nastavit vstup, výstup, CIRCLE
-    3. nastavit okno aplikace, aby tam byl celý stát a v Environments nastavit u Output Coordinate System "Current Map", u Processing Extent "Current Display Extent"
-    4. spustit funkci
-7. získat souřadnice středu kružnice
-    1. Geoprocessing - Feature To Point
-    2. v atributové tabulce přidat sloupce fi, lambda a vypočítat souřadnice ve WGS84 pomocí Calculate geometry nad sloupcem
-8. nastavit souřadnicový systém mapy v ArcGIS Pro na Stereographic (stereografická projekce)
-    1. Map - Coordinate Systems - New Projected Coordinate System - Stereographic
-    2. FE, FN nastavit na 0, doplnit zeměpisné souřadnice středu, Scale Factor nastavit 1
-9. odečíst souřadnice libovolného bodu na kružnici
-10. pomocí sférické trigonometrie vypočítat Š tohoto bodu
-11. vypočítat délkové zkreslení na krajní kartografické rovnoběžce (závisí pouze na Š)
-12. vypočítat poloměr kružnice, která má přesně požadované zkreslení
-13. vytvořit mapu
-    1. přidat vrstvu s podkladem, např. World Topographic Base Map
-    2. přidat vrstvu se zeměpisnou sítí s vhodným intervalem
-    3. mapa bude obsahovat daný stát, kružnici, střed a bod, dále požadované menší kružnice s maximálním povoleným zkreslením
-    4. vložit Layout: Insert - New Layout - A4 (na šířku nebo délku)
-    5. vložit Map Frame, nadpis, měřítko, tiráž
+## Odevzdání:
 
+Technická zpráva bude obsahovat podrobný popis tvorby mapového výstupu včetně mezikroků, které byly součástí příprav. Dále bude obsahovat výpočet nezkreslené rovnoběžky pro válcové zobrazení a všechny potřebné parametry tří vhodných zobrazení zadané země. Součástí technické zprávy bude také tabulka porovnávající rozlohu státu v jednotlivých zobrazeních. V závěru zkuste popsat, k čemu se primárně využívají zbylá kartografická zobrazení, která byla zobrazena.
+
+Přílohou úlohy bude mapový výstup ve formátu A3.
 
 ## Konkrétní zadání:
 

@@ -3,7 +3,7 @@ icon: material/numeric-2-box
 title: Úloha 2
 ---
 
-# Zobrazení koule do roviny mapy
+# Zobrazení Země na mnohostěnu
 
 Vytvořte papírový 3D model Země na pravidelném dvanáctistěnu. Tuto aproximaci zemského povrchu proveďte v gnómonické projekci pomocí softwaru ArcGIS Pro. Pro hlavní město zadaného státu vypočtěte plošné zkreslení, maximální hodnotu úhlového zkreslení a extrémní hodnoty délkového zkreslení. Zadaný stát v modelu zvýrazněte. Vypočtěte také extrémní hodnoty těchto zkreslení pro vytvořenou aproximaci (okraje pětiúhelníků). Získané hodnoty porovnejte s výsledky z programu PROJ.
 
