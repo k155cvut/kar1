@@ -96,35 +96,46 @@ __Doporučený postup v ArcGIS Pro pro Stereografickou projekci:__
 
 ## Konkrétní zadání:
 
-| Číslo | Stát        |
-|--------|-------------|
-| 1      | NORSKO     |
-| 2      | CHILE      |
-| 3      | FINSKO     |
-| 4      | ŠVÉDSKO    |
-| 5      | VIETNAM    |
-| 6      | LITVA      |
-| 7      | LOTYŠSKO   |
-| 8      | ESTONSKO   |
-| 9      | ŘECKO      |
-| 10     | THAJSKO    |
-| 11     | LAOS       |
-| 12     | KAMBODŽA   |
-| 13     | DÁNSKO     |
-| 14     | EKVÁDOR    |
-| 15     | BOLÍVIE    |
-| 16     | NOVÝ ZÉLAND|
-| 17     | PORTUGALSKO|
-| 18     | BULHARSKO  |
-| 19     | PARAGUAY   |
-| 20     | TUNISKO    |
-| 21     | GHANA      |
-| 22     | ZIMBABWE   |
-| 23     | KAMERUN    |
-| 24     | NAMIBIE    |
-| 25     | MALI       |
-| 26     | MOSAMBIK   |
-| 27     | KEŇA       |
-| 28     | ČAD        |
-| 29     | ŠPANĚLSKO  |
-| 30     | RUMUNSKO   |
+| Číslo  | Stát           |
+|--------|----------------|
+| 1	     | Mexiko         |
+| 2	     | Argentina      |
+| 3	     | Bolívie        |
+| 4	     | Portugalsko    |
+| 5	     | Japonsko       |
+| 6	     | Mongolsko      |
+| 7	     | Kazachstán     |
+| 8	     | JAR            |
+| 9	     | Namibie        |
+| 10     | Madagaskar     |
+| 11     | Mosambik       |
+| 12     | Botswana       |
+| 13     | Alžírsko       |
+| 14     | Mauritánie     |
+| 15     | Libye          |
+| 16     | Egypt          |
+| 17     | Saúdská Arábie |
+| 18     | Írán           |
+| 19     | Turecko        |
+| 20     | Niger          |
+| 21     | Čad            |
+| 22     | Súdán          |
+| 23     | Francie        |
+| 24     | Německo        |
+| 25     | Polsko         |
+| 26     | Itálie         |
+| 27     | Španělsko      |
+| 28     | Rumunsko       |
+| 29     | Island         | 
+| 30     | Velká Británie |
+| 31     | Indie          |
+| 32     | Etiopie        |
+| 33     | Finsko         |
+| 34     | Švédsko        |
+| 35     | Tanzanie       |
+| 36     | Angola         |
+| 37     | Paraguay       |
+| 38     | Peru           |
+| 39     | DR Kongo       |
+| 40     | Pákistán       |
+

@@ -64,26 +64,24 @@ __[prof. Ing. Jiří Cajthaml, Ph.D.](https://geomatics.fsv.cvut.cz/employees/ji
 
 ## Cvičení {: style="margin-bottom:0;"}
 
-__[prof. Ing. Jiří Cajthaml, Ph.D.](https://geomatics.fsv.cvut.cz/employees/jiri-cajthaml/)__
+__[prof. Ing. Jiří Cajthaml, Ph.D.](https://geomatics.fsv.cvut.cz/employees/jiri-cajthaml/)__,
+__[Ing. Jan Koudelka](https://geomatics.fsv.cvut.cz/employees/jan-koudelka/)__
 
 | Datum  | Náplň cvičení |
 |--------|--------------|
-| 20.2.  | odpadá       |
-| 27.2.  | odpadá       |
-| 6.3.   | zadání [__1. úlohy__](./ulohy/uloha1.md) |
-| 13.3.  | konzultace   |
-| 20.3.  | zadání [__2. úlohy__](./ulohy/uloha2.md) |
-| 27.3.  | konzultace   |
-| 3.4.   | zadání [__3. úlohy__](./ulohy/uloha3.md) |
-| 10.4.  | test z úloh 1+2 |
-| 17.4.  | Velikonoce   |
-| 24.4.  | zadání [__4. úlohy__](./ulohy/uloha4.md) |
-| 29.4.  | úterý (čtvrteční rozvrh) - konzultace |
-| 1.5.   | svátek       |
-| 8.5.   | svátek       |
-| 15.5.  | výuka v terénu |
-| 19.5.  | pondělí (čtvrteční rozvrh) výuka v terénu |
-| x.5.   | test z úloh 3+4 |
+| 19.2.  | zadání [__1. úlohy__](./ulohy/uloha1.md) |
+| 26.2.  | odpadá       |
+| 5.3.   | zadání [__2. úlohy__](./ulohy/uloha2.md) |
+| 12.3.  | konzultace   |
+| 19.3.  | konzultace   |
+| 26.3.  | zadání [__3. úlohy__](./ulohy/uloha3.md) - 1. část  |
+| 2.4.   | Velikonoce   |
+| 9.4.   | zadání [__3. úlohy__](./ulohy/uloha3.md) - 2. část  |
+| 16.4.  | test z úloh 1+2   |
+| 23.4.  | zadání [__4. úlohy__](./ulohy/uloha4.md) |
+| 30.4.  | konzultace   |
+| 7.5.   | test z úloh 3+4   |
+| 14.5.  | výuka v terénu |
 
 
 __Každá úloha bude obsahovat:__
