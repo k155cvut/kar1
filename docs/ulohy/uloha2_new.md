@@ -62,6 +62,19 @@ Technická zpráva – popsat postup řešení úlohy a samotnou tvorbu modelu. 
 
 3D model - donést fyzicky ke kontrole, pak bude vrácen.
 
+## Data    
+[:material-download: World Boundaries (OpenDataSoft) :material-layers:](../assets/world_boundaries.zip){ .md-button .md-button--primary .button_smaller }
+    {: .button_array style="justify-content:flex-start;"}
+
+[:material-download: Zeměpisná síť :material-layers:](../assets/lonlat.zip){ .md-button .md-button--primary .button_smaller }
+    {: .button_array style="justify-content:flex-start;"}
+
+[:material-download: Projekční body :material-layers:](../assets/body_2.csv){ .md-button .md-button--primary .button_smaller }
+    {: .button_array style="justify-content:flex-start;"}
+
+[:material-download: Šablona :material-layers:](../assets/skladacka_tisk.pdf){ .md-button .md-button--primary .button_smaller }
+    {: .button_array style="justify-content:flex-start;"}
+
 ## Číselné zadání
 
 | Číslo  | Stát           |
