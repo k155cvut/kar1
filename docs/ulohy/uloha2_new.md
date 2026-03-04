@@ -62,7 +62,7 @@ Technická zpráva – popsat postup řešení úlohy a samotnou tvorbu modelu. 
 
 3D model - donést fyzicky ke kontrole, pak bude vrácen.
 
-## Data    
+## Zdroje dat    
 [:material-download: World Boundaries (OpenDataSoft) :material-layers:](../assets/world_boundaries.zip){ .md-button .md-button--primary .button_smaller }
     {: .button_array style="justify-content:flex-start;"}
 
