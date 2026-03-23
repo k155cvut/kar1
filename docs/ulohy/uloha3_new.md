@@ -50,6 +50,10 @@ Technická zpráva bude obsahovat podrobný popis tvorby mapového výstupu vče
 
 Přílohou úlohy bude mapový výstup ve formátu A3.
 
+## Zdroje dat    
+[:material-download: World Boundaries (OpenDataSoft) :material-layers:](../assets/world_boundaries.zip){ .md-button .md-button--primary .button_smaller }
+    {: .button_array style="justify-content:flex-start;"}
+
 ## Konkrétní zadání:
 
 | Číslo  | Stát           |
