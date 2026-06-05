@@ -39,18 +39,23 @@ x = R \cdot V
 y = R \cdot \sin(U)
 \]
 
-### Mercator-Sansonovo nepravé válcové sinusoidální zobrazení
+### Pseudokónické Stab-Wernerovo zobrazení
 
 \[
-x = R \cdot V \cdot \cos(U)
+x = R \cdot (90-U) \cdot \sin\left(\frac{\cos(U) \cdot V}{90-U}\right)
 \]
 
 \[
-y = R \cdot U
+y = -R \cdot (90-U) \cdot \cos\left(\frac{\cos(U) \cdot V}{90-U}\right)
 \]
 
+Dále vypočtěte délky obou křivek. Výpočty provádějte na referenční kouli s poloměrem \( R = 6380 \) km s přesností na **úhlové vteřiny** a **mm**.
 
-Dále vypočtěte délky obou křivek. Výpočty provádějte na referenční kouli s poloměrem \( R = 6380 \) km s přesností na úhlové vteřiny a mm.
+## Odevzdání:
+
+-Technická zpráva - zadání, výpočetní postup + matematické formulace, přehledná tabulka s výsledky (souřadnice a délky), závěr, zákresy křivek včetně legendy
+
+-vlastní skript z Matlabu
 
 ## Číselné zadání
 
