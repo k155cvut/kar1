@@ -9,7 +9,7 @@ Pro zadanou zemi vytvořte mapový výstup, který bude stát zobrazovat v něko
 
 ## Postup v ArcGIS Pro:
 
-- Vytvoříme nový projekt a nahrajeme [databázi zemí](https://github.com/jankoudy/KAR1/blob/main/uloha3/world_boundaries.zip) (_add data_)
+- Vytvoříme nový projekt a nahrajeme databázi zemí (_add data_) (viz _Zdroje dat_).
 - Z databáze zemí ponecháme pouze své zadání (_Definition Query_), citlivě odstraníme odlehlé ostrovy, změníme symbologii.
 - Vypneme podkladové mapy.
 - Budeme vytvářet celkem devět map, základní mapu v Mercatorově zobrazení si tak můžeme devětkrát nakopírovat. Pojmenovávat budeme mapy dle názvu zobrazení.
@@ -17,9 +17,9 @@ Pro zadanou zemi vytvořte mapový výstup, který bude stát zobrazovat v něko
     1. Mercatorovo zobrazení.
     2. 5 kartografických zobrazení dle vlastního výběru (Bonne, Winkel–Tripel, Cube, Mollweide, Spilhaus World Ocean, Robinson, Fuller, Plate Carée) – nastavujeme v _Map_ -> _Properties_ -> _Coordinate systems_ -> _Projected_ -> _World_.
     3. 3 kartografická zobrazení vhodná pro naše území (bude probráno později).
-- Pro každé zobrazení nás zajímá, jak moc je v něm naše země plošně změněna. Cílem je tedy vypočítat plochu daného státu v daném kartografickém zobrazení. (nepůjde pro Mercatorovo zobrazení)
-    1. Vrstvu obsahující náš polygon musíme nejprve předefinovat na správné zobrazení (_Analyses_ -> _Tools_ -> _Project_ -> nastavíme aktuální souřadnicový systém – _Current Map_).
-    2. Nad nově vzniklou vrstvou (ve správných rovinných souřadnicích) vypočteme její obsah (můžeme využít sloupec rozloha -> _Calculate Geometry_).
+- Pro každé zobrazení nás zajímá, jak moc je v něm naše země plošně změněna. Cílem je tedy vypočítat plochu daného státu v daném kartografickém zobrazení.
+    1. V atributové tabulce našeho státu vytvoříme sloupec pro rozlohu každého zobrazení.
+    2. Nad těmito sloupci počítáme rozlohu v daném kartografickém zobrazení - _Calculate Geometry_ - _Area_ - zvolíme dané zobrazení a nastavíme čtvereční kilometry.
 - Pokud máme hotových všech devět dílčích map, můžeme vytvořit Layout (_Insert_ -> _New Layout_ -> _A3 Portraite_).
 - Layout bude obsahovat všechny náležitosti mapy kromě legendy – název, mapová okna, měřítko, tiráž – vytvoříme společně během cvičení.
 
@@ -43,12 +43,13 @@ Kuželové zobrazení – u kuželových zobrazení je výpočet ideálních hod
 - Kromě nejsevernějšího a nejjižnějšího bodu území (jejich šířka) si zjistíme ještě nejzápadnější a nejvýchodnější souřadnice (jejich délka).
 - _Map_ -> _Properties_ -> _Coordinate Systems_ -> _New suggested projected coordinate system_ -> zadáme okrajové souřadnice a upřesníme požadavek na plochojevné zobrazení.
 - Pokud by ArcGIS Pro nenabídl žádné kuželové (Conic) zobrazení, vyzkoušíme ještě online nástroj [Projection Wizard](https://projectionwizard.org/), který funguje podobně. Pokud by nám tento nástroj nabídl nějaké kuželové zobrazení, nastavíme ho v ArcGIS dle zobrazených parametrů.
+- Pokud by ani toto nešlo, parametry kuželového zobrazení zprostředkuje vyučující.
 
 ## Odevzdání:
 
-Technická zpráva bude obsahovat podrobný popis tvorby mapového výstupu včetně mezikroků, které byly součástí příprav. Dále bude obsahovat výpočet nezkreslené rovnoběžky pro válcové zobrazení a všechny potřebné parametry tří vhodných zobrazení zadané země. Součástí technické zprávy bude také tabulka porovnávající rozlohu státu v jednotlivých zobrazeních. V závěru zkuste popsat, k čemu se primárně využívají zbylá kartografická zobrazení, která byla zobrazena.
+Technická zpráva bude obsahovat podrobný popis tvorby mapového výstupu včetně mezikroků, které byly součástí příprav. Dále bude obsahovat výpočet nezkreslené rovnoběžky pro válcové zobrazení (včetně uvedení odvozeného vzorce) a všechny potřebné parametry tří vhodných zobrazení zadané země (u válcového zobrazení nezkreslená rovnoběžka, u kuželového jedna nebo dvě nezkreslené rovnoběžky, u azimutálního souřadnice středu projekce). Popsán bude také postup hledání těchto hodnot pro jednotlivá ideální zobrazení. Součástí technické zprávy bude také tabulka porovnávající rozlohu státu v jednotlivých zobrazeních. V závěru zkuste popsat, k čemu se primárně využívají zbylá kartografická zobrazení, která byla zobrazena.
 
-Přílohou úlohy bude mapový výstup ve formátu A3.
+Přílohou úlohy bude mapový výstup ve formátu A3 - obsahující název, měřítko (_1 : xxx xxx xxx_), tiráž, jednotlivé mapy s popisky (název zobrazení + rozloha).
 
 ## Zdroje dat    
 [:material-download: World Boundaries (OpenDataSoft) :material-layers:](../assets/world_boundaries.zip){ .md-button .md-button--primary .button_smaller }
