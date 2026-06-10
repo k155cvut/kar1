@@ -3,7 +3,7 @@ icon: material/numeric-4-box
 title: Úloha 4
 ---
 
-Je dán bod P svými zeměpisnými souřadnicemi φ , λ {\displaystyle \varphi ,\lambda } na elipsoidu WGS84. Vypočtěte pravoúhlé souřadnice jeho rovinného obrazu a uveďte hodnotu délkového zkreslení v systému JTSK. Použijte vlastní skript v Matlabu. Helmertova transformace mezi elipsoidy: [zde](http://maps.fsv.cvut.cz/~cajthaml/vyuka/kar1/elipsoid.pdf)
+Je dán bod P svými zeměpisnými souřadnicemi φ , λ na elipsoidu WGS84. Vypočtěte pravoúhlé souřadnice jeho rovinného obrazu a uveďte hodnotu délkového zkreslení v systému JTSK. Použijte vlastní skript v Matlabu. Helmertova transformace mezi elipsoidy: [zde](https://github.com/jankoudy/KAR1/blob/main/uloha4/prevod_mezi_elipsoidy.pdf)
 
 __Pomocí software PROJ.4 vypočtěte rovinné pravoúhlé souřadnice bodu P a hodnotu délkového zkreslení:__
 
@@ -12,8 +12,9 @@ __Pomocí software PROJ.4 vypočtěte rovinné pravoúhlé souřadnice bodu P a 
 
 __Použití PROJ.4:__
 
-- ``` (cs2cs +proj=latlong +datum=WGS84 +to +proj=krovak +ellps=bessel +towgs84=570.8,85.7,462.8,4.998,1.587,5.261,3.56) ```
-- ``` (proj +proj=utm +datum=WGS84 +zone=33) ```
+- souřadnice v JTSK: ``` (cs2cs +proj=latlong +datum=WGS84 +to +proj=krovak +ellps=bessel +towgs84=570.8,85.7,462.8,4.998,1.587,5.261,3.56) ```
+- délkové zkreslení v JTSK: ``` (proj -V +proj=krovak +ellps=bessel +towgs84=570.8,85.7,462.8,4.998,1.587,5.261,3.56) ```
+- souřadnice a délkové zkreslení v UTM: ``` (proj -V +proj=utm +datum=WGS84 +zone=33) ```
 
 
 __Pomocí software ArcGIS vypočtěte rovinné pravoúhlé souřadnice bodu P:__
@@ -27,6 +28,17 @@ __Pro kartografická zobrazení používejte příslušné geodetické datumy (e
 - Bessel2WGS: 570.8,85.7,462.8,4.998,1.587,5.261,3.56
 
 __Požadovaná přesnost výsledků:__ (souřadnice na cm), (zkreslení na 6 desetinných míst). 
+
+__Souřadnice z PROJ a ArcGIS Pro:__
+
+- JTSK: oba programy nabízí výsledné souřadnice matematicky - přehozené a se záporným znaménkém - nutno pozměnit
+- UTM: oba programy nabízí výsledné souřadnice přehozené - X směřuje k severu a na našem území je vždy o řád vyšší než Y
+
+__Odevzdání:__
+
+-Technická zpráva - zadání, postup výpočtu (Matlab, PROJ, ArGIS Pro), matematické formulace, souřadnice JTSK na cm (Matlab, ArcGIS Pro, PROJ), délkové zkreslení JTSK na 6 des. míst (Matlab, PROJ), souřadnice UTM na cm (PROJ, ArcGIS Pro), délkové zkreslení UTM na 6 des. míst (PROJ), všechny výsledky uvést do přehledných tabulek s uvedením jednotek, závěr.
+
+-Přílohou bude vlastní výpočetní skript z Matlabu.
 
 ## Číselné zadání:
 | Číslo | \( \varphi \) | \( \lambda \) |
